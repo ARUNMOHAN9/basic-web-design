@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NatoursComponent } from './natours.component';
 import { NatourRoutingModule } from './natour-routing.module';
-import { FirstScrollViewComponent } from './first-scroll-view/first-scroll-view.component';
-import { SecondScrollViewComponent } from './second-scroll-view/second-scroll-view.component';
 import { CardComponent } from './card/card.component';
-import { ThirdScrollViewComponent } from './third-scroll-view/third-scroll-view.component';
-import { FourthScrollViewComponent } from './fourth-scroll-view/fourth-scroll-view.component';
+import { NatIntroComponent } from './nat-intro/nat-intro.component';
+import { NatAboutComponent } from './nat-about/nat-about.component';
+import { NatFeatureComponent } from './nat-feature/nat-feature.component';
+import { NatToursComponent } from './nat-tours/nat-tours.component';
 
 @NgModule({
   declarations: [
     NatoursComponent,
-    FirstScrollViewComponent,
-    SecondScrollViewComponent,
     CardComponent,
-    ThirdScrollViewComponent,
-    FourthScrollViewComponent
+    NatIntroComponent,
+    NatAboutComponent,
+    NatFeatureComponent,
+    NatToursComponent
   ],
   imports: [CommonModule, NatourRoutingModule],
 })
