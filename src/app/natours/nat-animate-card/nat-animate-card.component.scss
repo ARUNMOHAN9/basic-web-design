@@ -1,0 +1,52 @@
+@use 'src/styles/abstracts/variables' as colors;
+
+.card {
+    perspective: 150rem;
+    position: relative;
+    height: 50rem;
+
+    &-animate {
+        color: #fff;
+        font-size: 2rem;
+        height: 50rem;
+        transition: transform 0.8s ease;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba(colors.$color-black, 0.15);
+
+        &-front,
+        &-back {
+            position: absolute;
+            width: 100%;
+            backface-visibility: hidden;
+        }
+
+        &-front {
+            background-color: colors.$color-white;
+            z-index: 1;
+        }
+
+        &-back {
+            transform: rotateY(180deg);
+
+            &-green {
+                background: linear-gradient(to right bottom, colors.$color-green-light, colors.$color-green-dark);
+            }
+
+            &-yellow {
+                background: linear-gradient(to right bottom, colors.$color-yellow-light, colors.$color-yellow-dark);
+            }
+
+            &-blue {
+                background: linear-gradient(to right bottom, colors.$color-blue-light, colors.$color-blue-dark);
+            }
+        }
+    }
+
+    &:hover &-animate-front {
+        transform: rotateY(180deg);
+    }
+
+    &:hover &-animate-back {
+        transform: rotateY(0);
+    }
+}

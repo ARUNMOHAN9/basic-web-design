@@ -7,6 +7,7 @@ import { NatAboutComponent } from './nat-about/nat-about.component';
 import { NatFeatureComponent } from './nat-feature/nat-feature.component';
 import { NatToursComponent } from './nat-tours/nat-tours.component';
 import { NatPlainCardComponent } from './nat-plain-card/nat-plain-card.component';
+import { NatAnimateCardComponent } from './nat-animate-card/nat-animate-card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NatPlainCardComponent } from './nat-plain-card/nat-plain-card.component
     NatAboutComponent,
     NatFeatureComponent,
     NatToursComponent,
-    NatPlainCardComponent
+    NatPlainCardComponent,
+    NatAnimateCardComponent
   ],
   imports: [CommonModule, NatourRoutingModule],
 })
