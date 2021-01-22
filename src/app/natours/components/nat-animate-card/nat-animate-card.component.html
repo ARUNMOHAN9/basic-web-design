@@ -1,24 +1,8 @@
 <div class="card">
     <div class="card-animate card-animate-front">
-        <div class="card-pic">
-            &nbsp;
-        </div>
-        <h1 class="card-heading">
-            <span class="card-heading-yellow">
-                the sea explorer
-            </span>
-        </h1>
-        <div class="card-details">
-            <ul>
-                <li>3 day tours</li>
-                <li>Up to 30 people</li>
-                <li>2 tour guides</li>
-                <li>Sleep in cozy hotels</li>
-                <li>Difficulty: easy</li>
-            </ul>
-        </div>
+        <ng-content select=[front-side]></ng-content>
     </div>
     <div class="card-animate card-animate-back card-animate-back-yellow">
-        card
+        <ng-content select=[back-side]></ng-content>
     </div>
 </div>
