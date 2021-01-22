@@ -18,6 +18,71 @@
 
 .section-tours {
   background-color: var.$color-grey-light;
-  padding: 25rem 0;
-  margin: -10rem 0;
+  padding: 20rem 0;
+  margin: -12rem 0;
+}
+
+.btn {
+  transition: transform 200ms;
+  backface-visibility: hidden;
+  position: relative;
+  animation: moveToUp 0.5s ease-in-out 0.75;
+  animation-fill-mode: backwards;
+  font-size: 1.6rem;
+
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(var.$color-black, 0.2);
+    transition: transform 200ms;
+
+    &:after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(var.$color-black, 0.2);
+  }
+
+  &-white {
+    background-color: var.$color-white;
+    color: var.$color-grey-dark;
+
+    &::after {
+      background-color: var.$color-white;
+    }
+  }
+
+  &-green {
+    background-color: var.$color-green-medium;
+    color: var.$color-white;
+
+    &::after {
+      background-color: var.$color-green-medium;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
 }
