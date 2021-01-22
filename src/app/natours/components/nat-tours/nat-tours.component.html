@@ -6,14 +6,8 @@
     </div>
 
     <div class="row">
-        <div class="col-1-of-3">
-            <app-nat-tour-card></app-nat-tour-card>
-        </div>
-        <div class="col-1-of-3">
-            <app-nat-tour-card></app-nat-tour-card>
-        </div>
-        <div class="col-1-of-3">
-            <app-nat-tour-card></app-nat-tour-card>
+        <div class="col-1-of-3" *ngFor="let cardItem of cardItemList">
+            <app-nat-tour-card [cardItem]="cardItem"></app-nat-tour-card>
         </div>
     </div>
 </section>

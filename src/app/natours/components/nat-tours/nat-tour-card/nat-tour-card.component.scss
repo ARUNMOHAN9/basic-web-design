@@ -1,32 +1,66 @@
-@use 'src/styles/abstracts/variables' as colors;
+@use 'src/styles/abstracts/variables' as var;
 
 .card-pic {
-    background-image: linear-gradient(to right bottom, colors.$color-yellow-light, colors.$color-yellow-dark),
-        url(/assets/images/nat-5.jpg);
     background-size: cover;
     height: 20rem;
     background-blend-mode: screen;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &-yellow {
+        background-image: linear-gradient(to right bottom, var.$color-yellow-light, var.$color-yellow-dark),
+            url(/assets/images/nat-5.jpg);
+    }
+
+    &-green {
+        background-image: linear-gradient(to right bottom, var.$color-green-light, var.$color-green-dark),
+            url(/assets/images/nat-6.jpg);
+    }
+
+    &-blue {
+        background-image: linear-gradient(to right bottom, var.$color-blue-light, var.$color-blue-dark),
+            url(/assets/images/nat-7.jpg);
+    }
 }
 
 .card-heading {
     font-size: 2.8rem;
     font-weight: 300;
     text-transform: uppercase;
-    color: colors.$color-white;
+    color: var.$color-white;
     position: absolute;
-    top: 10rem;
-    right: 3rem;
+    top: 5rem;
+    right: 1rem;
     text-align: right;
-    width: 75%;
+    width: 80%;
 
-    &-yellow {
+    &-yellow,
+    &-green,
+    &-blue {
         padding: 1rem 1.5rem;
         box-decoration-break: clone;
+    }
+
+    &-yellow {
         background-image: linear-gradient(
             to right bottom,
-            rgba(colors.$color-yellow-light, 0.85),
-            rgba(colors.$color-yellow-dark, 0.85)
+            rgba(var.$color-yellow-light, 0.85),
+            rgba(var.$color-yellow-dark, 0.85)
+        );
+    }
+
+    &-green {
+        background-image: linear-gradient(
+            to right bottom,
+            rgba(var.$color-green-light, 0.85),
+            rgba(var.$color-green-dark, 0.85)
+        );
+    }
+
+    &-blue {
+        background-image: linear-gradient(
+            to right bottom,
+            rgba(var.$color-blue-light, 0.85),
+            rgba(var.$color-blue-dark, 0.85)
         );
     }
 }
@@ -45,8 +79,89 @@
             padding: 1rem;
 
             &:not(:last-child) {
-                border-bottom: 1px solid colors.$color-grey-medium;
+                border-bottom: 1px solid var.$color-grey-medium;
             }
         }
+    }
+}
+
+.card-cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 90%;
+    text-align: center;
+
+    .card-price {
+        text-align: center;
+        color: var.$color-white;
+        margin-bottom: 8rem;
+    }
+
+    .card-price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    .card-price-value {
+        font-size: 6rem;
+        font-weight: 100;
+    }
+}
+
+.btn {
+    transition: transform 200ms;
+    backface-visibility: hidden;
+    position: relative;
+    animation: moveToUp 0.5s ease-in-out 0.75;
+    animation-fill-mode: backwards;
+    font-size: 1.6rem;
+
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+    }
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba(var.$color-black, 0.2);
+        transition: transform 200ms;
+
+        &:after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba(var.$color-black, 0.2);
+    }
+
+    &-white {
+        background-color: var.$color-white;
+        color: var.$color-grey-dark;
+
+        &::after {
+            background-color: var.$color-white;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
     }
 }

@@ -2,7 +2,7 @@
     <div class="card-animate card-animate-front">
         <ng-content select=[front-side]></ng-content>
     </div>
-    <div class="card-animate card-animate-back card-animate-back-yellow">
+    <div class="card-animate card-animate-back" [ngClass]="[colorClass]">
         <ng-content select=[back-side]></ng-content>
     </div>
 </div>

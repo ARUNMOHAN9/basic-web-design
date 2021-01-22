@@ -1,25 +1,31 @@
-<app-nat-animate-card>
+<app-nat-animate-card [colorClass]="cardItem?.colorBack || ''">
     <ng-container front-side>
-        <div class="card-pic">
+        <div class="card-pic" [ngClass]="cardItem?.colorFront">
             &nbsp;
         </div>
         <h1 class="card-heading">
-            <span class="card-heading-yellow">
-                the sea explorer
+            <span class="card-heading" [ngClass]="cardItem?.colorHead">
+                {{cardItem?.title}}
             </span>
         </h1>
         <div class="card-details">
             <ul>
-                <li>3 day tours</li>
-                <li>Up to 30 people</li>
-                <li>2 tour guides</li>
-                <li>Sleep in cozy hotels</li>
-                <li>Difficulty: easy</li>
+                <li *ngFor="let benifict of cardItem?.benificts">
+                    {{benifict}}
+                </li>
             </ul>
         </div>
     </ng-container>
 
     <ng-container back-side>
-        Back text
+        <div class="pos-rel">
+            <div class="card-cta">
+                <div class="card-price">
+                    <p class="card-price-only">Only</p>
+                    <p class="card-price-value">$ {{cardItem?.price}}</p>
+                </div>
+                <a href="#" class="btn btn-white">Book now!</a>
+            </div>
+        </div>
     </ng-container>
 </app-nat-animate-card>

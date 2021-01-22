@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nat-animate-card',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nat-animate-card.component.scss']
 })
 export class NatAnimateCardComponent implements OnInit {
+
+  @Input()
+  colorClass = '';
 
   constructor() { }
 
